@@ -1,0 +1,231 @@
+/* ===============================
+   기본 설정
+================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+    background-color: #f5f5f5;
+    color: #222;
+}
+
+/* 제목 */
+
+h1 {
+    margin: 30px 0 10px;
+    font-size: 36px;
+}
+
+/* 설명 */
+
+.description {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #555;
+}
+
+/* ===============================
+   게임 메시지
+================================ */
+
+#message {
+    height: 35px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    text-align: center;
+}
+
+/* ===============================
+   게임판
+================================ */
+
+#game-board {
+    display: grid;
+
+    grid-template-rows: repeat(6, 1fr);
+
+    gap: 6px;
+
+    margin: 15px 0;
+}
+
+/* 한 줄 */
+
+.row {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 6px;
+}
+
+/* 글자 칸 */
+
+.tile {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid #d3d6da;
+
+    background-color: white;
+
+    font-size: 32px;
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
+
+/* 현재 입력 중인 칸 */
+
+.tile.active {
+    border-color: #888;
+}
+
+/* ===============================
+   정답 판정 색상
+================================ */
+
+/* 글자와 위치 모두 정확 */
+
+.correct {
+    background-color: #6aaa64;
+    border-color: #6aaa64;
+    color: white;
+}
+
+/* 글자는 있지만 위치가 다름 */
+
+.present {
+    background-color: #c9b458;
+    border-color: #c9b458;
+    color: white;
+}
+
+/* 정답 단어에 없음 */
+
+.absent {
+    background-color: #787c7e;
+    border-color: #787c7e;
+    color: white;
+}
+
+/* ===============================
+   화면 키보드
+================================ */
+
+#keyboard {
+    width: 100%;
+    max-width: 520px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin-top: 10px;
+}
+
+/* 키보드 한 줄 */
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+
+    gap: 6px;
+}
+
+/* 키보드 버튼 */
+
+.key {
+    min-width: 42px;
+    height: 55px;
+
+    border: none;
+    border-radius: 4px;
+
+    background-color: #d3d6da;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+/* 마우스를 올렸을 때 */
+
+.key:hover {
+    opacity: 0.8;
+}
+
+/* ENTER, BACK 버튼 */
+
+.wide-key {
+    min-width: 65px;
+    font-size: 13px;
+}
+
+/* ===============================
+   다시 시작 버튼
+================================ */
+
+#restart-button {
+    display: none;
+
+    margin: 25px 0;
+    padding: 12px 25px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #4caf50;
+    color: white;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#restart-button:hover {
+    background-color: #388e3c;
+}
+
+/* ===============================
+   모바일 화면
+================================ */
+
+@media (max-width: 500px) {
+
+    .tile {
+        width: 50px;
+        height: 50px;
+
+        font-size: 26px;
+    }
+
+    .key {
+        min-width: 30px;
+        height: 50px;
+    }
+
+    .wide-key {
+        min-width: 55px;
+    }
+}
