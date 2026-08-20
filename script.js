@@ -22,7 +22,8 @@ const words = [
     "RIVER",
     "SMART",
     "TABLE",
-    "TRAIN"
+    "TRAIN",
+    "BELLE"
 ];
 
 
